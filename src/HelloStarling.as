@@ -24,9 +24,12 @@ package
     }
 }
 import starling.core.Starling;
+import starling.display.DisplayObjectContainer;
 import starling.display.Sprite;
 import starling.events.Event;
+
 import starling_demos.AllStarlingDemos;
+
 import xface.XFace;
 
 internal class StarlingRoot extends starling.display.Sprite
@@ -47,7 +50,7 @@ internal class StarlingRoot extends starling.display.Sprite
         XFace.setUnitPostfix("Demo");
 
         XFace.mapInjection(starling);
-        XFace.mapInjection(this, Sprite);
+        XFace.mapInjection(this, Sprite, DisplayObjectContainer);
 
         XFace.addTearDownMethods(removeChildren);
 

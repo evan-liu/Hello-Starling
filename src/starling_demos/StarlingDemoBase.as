@@ -2,13 +2,13 @@ package starling_demos
 {
     import starling.core.Starling;
     import starling.display.DisplayObject;
-    import starling.display.Sprite;
+    import starling.display.DisplayObjectContainer;
 
     import xface.XFace;
     public class StarlingDemoBase
     {
         [Inject]
-        public var root:Sprite;
+        public var root:DisplayObjectContainer;
         [Inject]
         public var starling:Starling;
 

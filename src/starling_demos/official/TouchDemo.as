@@ -36,10 +36,10 @@ package starling_demos.official
             // It's an internal class below.
 
             var sheet1:TouchSheet = new TouchSheet(eggClosed);
-            display(sheet1, 130, 200);
+            display(sheet1, 380, 250);
 
             var sheet2:TouchSheet = new TouchSheet(eggOpened);
-            display(sheet2, 200, 295);
+            display(sheet2, 450, 345);
         }
     }
 }
