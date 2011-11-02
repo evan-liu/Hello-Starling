@@ -1,0 +1,17 @@
+h2. Hello Starling
+
+Demos of "Starling Framework":http://www.starling-framework.org/ .
+
+You can see all demos in one application based on "XFace":https://github.com/eidiot/xface and view all source code in one project code base.
+
+h3. NOTE
+
+* Add "-swf-version=13" to your Compiler Arguments. 
+* Run "bin/HelloStarling.html" instead of "bin/HelloStarling.swf".
+
+h3. Demos
+
+* Official demos
+** http://www.starling-framework.org/demo/index.html
+* Demos from James Li
+** http://jamesli.cn/blog/?p=1140
