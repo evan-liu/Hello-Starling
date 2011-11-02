@@ -2,7 +2,6 @@ package starling_demos.official
 {
     import starling.animation.Transitions;
     import starling.animation.Tween;
-    import starling.core.Starling;
     import starling.display.Button;
     import starling.display.Image;
     import starling.events.Event;
@@ -103,7 +102,7 @@ package starling_demos.official
             // This is done by the 'Juggler'. It receives the tween and will carry it out.
             // We use the default juggler here, but you can create your own jugglers, as well.
             // That way, you can group animations into logical parts.
-            Starling.juggler.add(tween);
+            starling.juggler.add(tween);
 
             // show which tweening function is used
             mTransitionLabel.text = transition;
@@ -111,7 +110,7 @@ package starling_demos.official
 
             var hideTween:Tween = new Tween(mTransitionLabel, 3.0, Transitions.EASE_IN);
             hideTween.animate("alpha", 0.0);
-            Starling.juggler.add(hideTween);
+            starling.juggler.add(hideTween);
         }
         private function onDelayButtonTriggered(event:Event):void
         {
@@ -121,9 +120,9 @@ package starling_demos.official
             // you use your own juggler in a component of your game, because it gives you perfect
             // control over the flow of time and animations.
 
-            Starling.juggler.delayCall(colorizeEgg, 1.0, true);
-            Starling.juggler.delayCall(colorizeEgg, 2.0, false);
-            Starling.juggler.delayCall(function():void { mDelayButton.enabled = true; }, 2.0);
+            starling.juggler.delayCall(colorizeEgg, 1.0, true);
+            starling.juggler.delayCall(colorizeEgg, 2.0, false);
+            starling.juggler.delayCall(function():void { mDelayButton.enabled = true; }, 2.0);
         }
     }
 }

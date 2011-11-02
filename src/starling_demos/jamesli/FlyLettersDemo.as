@@ -61,7 +61,7 @@ package starling_demos.jamesli
             sprite.name = String(Math.round(Math.random() * 10));
             sprite.rotation = Math.PI * 2 * Math.random();
             sprite.x = 300;
-            sprite.y = 200;
+            sprite.y = 300;
             sprite.scaleX = sprite.scaleY = .5;
             sprite.alpha = 0;
         }

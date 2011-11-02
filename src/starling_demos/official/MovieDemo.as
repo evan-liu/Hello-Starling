@@ -1,6 +1,5 @@
 package starling_demos.official
 {
-    import starling.core.Starling;
     import starling.display.MovieClip;
     import starling.textures.Texture;
     import starling.textures.TextureAtlas;
@@ -25,7 +24,7 @@ package starling_demos.official
         [After]
         public function tearDown():void
         {
-            Starling.juggler.remove(mMovie);
+            starling.juggler.remove(mMovie);
         }
 
         [Test]
@@ -47,7 +46,7 @@ package starling_demos.official
             mMovie.setFrameSound(7, stepSound);
 
             // like any animation, the movie needs to be added to the juggler!
-            Starling.juggler.add(mMovie);
+            starling.juggler.add(mMovie);
         }
     }
 }
