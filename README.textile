@@ -1,8 +1,12 @@
 h2. Hello Starling
 
-Demos of "Starling Framework":http://www.starling-framework.org/ .
+Demos of "Starling Framework":http://www.starling-framework.org/.
 
-You can see all demos in one application based on "XFace":https://github.com/eidiot/xface and view all source code in one project code base.
+h3. Why it
+
+* You can see all demos in one application based on "XFace":https://github.com/eidiot/xface.
+* You can view all source code in one project code base and edit it for trying easily.
+* You can add your demos or code pieces for studying easily too. 
 
 h3. NOTE
 
@@ -12,6 +16,75 @@ h3. NOTE
 h3. Demos
 
 * Official demos
-** http://www.starling-framework.org/demo/index.html
+** "http://www.starling-framework.org/demo/index.html":http://www.starling-framework.org/demo/index.html
 * Demos from James Li
-** http://jamesli.cn/blog/?p=1140
+** "http://jamesli.cn/blog/?p=1140":http://jamesli.cn/blog/?p=1140
+
+h3. Add your own code
+
+h4. Create your own demo 
+
+<pre>
+package starling_demos
+{
+    public class YourDemo extends StarlingDemoBase
+    {
+        [Test]
+        public function test():void
+        {
+            // Your demo code here.
+        }
+    }
+}
+</pre>
+
+<code>StarlingDemoBase</code> injected an Starling instance and root container for you, you can free your demo class from extending it by injecting them yourself if needed.
+
+<pre>
+package starling_demos
+{
+    import starling.core.Starling;
+    import starling.display.DisplayObject;
+    import starling.display.DisplayObjectContainer;
+
+    public class StarlingDemoBase
+    {
+        [Inject]
+        public var root:DisplayObjectContainer;
+        [Inject]
+        public var starling:Starling;
+
+        protected function display(child:DisplayObject, x:Number = 0, y:Number = 0):void
+        {
+            child.x = x;
+            child.y = y;
+            root.addChild(child);
+        }
+    }
+}
+</pre>
+
+h4. Add your demo to demo suite class
+
+<pre>
+package starling_demos
+{
+    import starling_demos.jamesli.JamesliDemos;
+    import starling_demos.official.OfficialDemos;
+
+    [Suite]
+    public class AllStarlingDemos
+    {
+        public static function suite():Array
+        {
+            return [
+
+                YourDemo, 
+
+                JamesliDemos,
+                OfficialDemos,
+            ];
+        }
+    }
+}
+</pre>
